@@ -42,6 +42,25 @@ movie recommender engine/
   requirements.txt
 ```
 
+## Team Collaboration
+
+This project is managed by a team of 3 developers using **Git Flow** methodology.
+
+**Important:** Before starting work, read [docs/GIT_WORKFLOW.md](docs/GIT_WORKFLOW.md) for guidelines on:
+- Creating feature branches
+- Making commits and pull requests
+- Code review process
+- Merging to dev/master branches
+
+**Quick Start:**
+```powershell
+git checkout dev
+git pull origin dev
+git checkout -b feature/your-feature-name
+# ... make your changes ...
+git push -u origin feature/your-feature-name
+```
+
 ## Next Step
 
 Implement the data loading and accumulated user attribute layer.
