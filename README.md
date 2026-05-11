@@ -1,10 +1,10 @@
 # Movie Recommender Engine
 
-Initial project scaffold for a content-based movie recommender.
+Initial project scaffold for **Lab Work 3: K-Means based movie recommendation**.
 
 ## Goal
 
-Build a simple recommender system that learns a user's genre preferences from rated movies and recommends similar unrated movies.
+Build a movie recommender system based on the Lab Work 3 requirement: use **K-Means clustering** to group similar users from their accumulated movie attributes, then recommend movies using users from the same cluster.
 
 ## Data
 
@@ -14,9 +14,12 @@ Build a simple recommender system that learns a user's genre preferences from ra
 ## Planned Features
 
 - Load and clean movie/user CSV files.
-- Build a user preference profile from liked movies.
-- Score candidate movies using genre similarity.
-- Return top movie recommendations with simple explanations.
+- Build an accumulated attribute profile for each user.
+- Create one combined user-level dataset.
+- Run K-Means clustering on user profiles.
+- Use SSE/elbow method to choose a suitable `k`.
+- Recommend movies from users in the same cluster.
+- Compare recommendation output with known values if required by the lab.
 
 ## Project Structure
 
@@ -41,4 +44,4 @@ movie recommender engine/
 
 ## Next Step
 
-Implement the data loading and cleaning layer.
+Implement the data loading and accumulated user attribute layer.

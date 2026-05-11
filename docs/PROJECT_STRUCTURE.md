@@ -14,7 +14,7 @@ It contains the source code, documentation, tests, notebooks, and data resources
 
 ## `resources/`
 
-This folder stores the dataset files used by the recommender system.
+This folder stores the Lab Work 3 dataset files used by the recommender system.
 
 Use this folder for:
 
@@ -91,14 +91,15 @@ Example future use:
 src/recommender.py
 ```
 
-Will contain the main recommendation algorithm.
+Will contain the main Lab Work 3 recommendation algorithm.
 
 Example future use:
 
-- Build a user preference profile
-- Compare movies using genre similarity
-- Generate top movie recommendations
-- Exclude movies already rated by the user
+- Build accumulated user attribute profiles
+- Run K-Means clustering
+- Calculate SSE values for different `k` values
+- Find users in the same cluster
+- Recommend movies from similar users
 
 ```text
 src/utils.py
@@ -152,9 +153,9 @@ Will contain tests for the recommendation logic.
 
 Example future tests:
 
-- Check that the user profile is calculated correctly
-- Check that already-rated movies are excluded
-- Check that recommendations are sorted by score
+- Check that accumulated user attributes are calculated correctly
+- Check that K-Means returns cluster labels
+- Check that already-watched movies are excluded from recommendations
 
 ## `docs/`
 
@@ -221,7 +222,7 @@ Example future dependencies:
 
 - `pandas` for reading and working with CSV data
 - `numpy` for numerical calculations
-- `scikit-learn` for similarity calculations
+- `scikit-learn` for K-Means clustering
 - `pytest` for testing
 
 For now, this file can remain empty until we decide which libraries the project will use.
@@ -232,8 +233,10 @@ The project should be built in this order:
 
 1. Load and inspect the data.
 2. Clean the dataset columns and values.
-3. Build the user preference profile.
-4. Implement the recommendation algorithm.
-5. Add command-line interaction in `main.py`.
-6. Add tests for each major feature.
-7. Improve documentation as the project grows.
+3. Build accumulated user attribute profiles.
+4. Run K-Means clustering.
+5. Use SSE/elbow method to choose `k`.
+6. Recommend movies from users in the same cluster.
+7. Add command-line interaction in `main.py`.
+8. Add tests for each major feature.
+9. Improve documentation as the project grows.
