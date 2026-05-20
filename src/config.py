@@ -1,0 +1,9 @@
+DATA_PATH = 'resources/movies-mod-genre-new.csv'
+CSV_SEPARATOR = ';'
+UNSEEN_SPLIT = 0.10      
+TEST_SPLIT = 0.20          
+K_RANGE = range(1, 20)
+N_RUNS = 3                 
+N_FINAL_RUNS = 5           
+RANDOM_STATE = 42          
+DROP_COLUMNS = ['Movie', 'index', 'rating']
