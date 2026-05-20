@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
@@ -41,7 +42,6 @@ def run_final_test(X_reduced, y_reduced, X_unseen, y_unseen, movies_unseen, best
         accuracies.append(accuracy_score(y_unseen, y_pred))
 
         if i == 0:
-            import pandas as pd
             results_df = pd.DataFrame({
                 'Movie title (10% data set)': movies_unseen.values,
                 'Recommendation by the classifier': y_pred,

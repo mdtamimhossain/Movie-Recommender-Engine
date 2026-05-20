@@ -5,13 +5,14 @@ from .config import DATA_PATH, CSV_SEPARATOR, DROP_COLUMNS, UNSEEN_SPLIT, RANDOM
 def load_data():
     df = pd.read_csv(DATA_PATH, sep=CSV_SEPARATOR, skipinitialspace=True)
     X = df.drop(columns=DROP_COLUMNS)
-    y = df['rating']
+    y1 = df['rating_user1']
+    y2 = df['rating_user2']
     movies = df['Movie']
-    return X, y, movies
+    return X, y1, y2, movies
 
-def split_unseen(X, y, movies):
+def split_unseen(X, y1, y2, movies):
     return train_test_split(
-        X, y, movies,
+        X, y1, y2, movies,
         test_size=UNSEEN_SPLIT,
         random_state=RANDOM_STATE
     )
