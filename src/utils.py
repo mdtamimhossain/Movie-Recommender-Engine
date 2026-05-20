@@ -14,6 +14,11 @@ def plot_error_vs_k(runs_data):
     plt.grid(True)
     plt.show()
 
+# -------------------------------------------------------------------
+# AI-assisted code:
+# The comparative visualization of both users' error curves was
+# implemented with support from generative AI.
+# -------------------------------------------------------------------
 def plot_error_vs_k_comparison(runs_data_user1, runs_data_user2):
     """Plot comparison of error vs k for two users side by side"""
     fig, axes = plt.subplots(1, 2, figsize=(16, 6))

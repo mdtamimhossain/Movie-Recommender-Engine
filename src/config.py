@@ -5,5 +5,4 @@ TEST_SPLIT = 0.20
 K_RANGE = range(1, 20)
 N_RUNS = 3                 
 N_FINAL_RUNS = 5           
-RANDOM_STATE = 42          
 DROP_COLUMNS = ['Movie', 'index', 'rating_user1', 'rating_user2']

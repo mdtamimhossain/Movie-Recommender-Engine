@@ -9,7 +9,7 @@ def find_optimal_k(X_reduced, y_reduced):
 
     best_k = 1
     min_error = float('inf')
-    runs_data = []  # [(errors_list), ...]
+    runs_data = [] 
 
     for _ in range(N_RUNS):
         X_train, X_test, y_train, y_test = train_test_split(
@@ -30,22 +30,27 @@ def find_optimal_k(X_reduced, y_reduced):
 
     return best_k, runs_data
 
-def run_final_test(X_reduced, y_reduced, X_unseen, y_unseen, movies_unseen, best_k, n_runs):
+def run_final_test(
+    X_reduced,
+    y_reduced,
+    X_unseen,
+    y_unseen,
+    movies_unseen,
+    best_k
+):
 
-    accuracies = []
-    results_df = None
+    knn = KNeighborsClassifier(n_neighbors=best_k)
 
-    for i in range(n_runs):
-        knn = KNeighborsClassifier(n_neighbors=best_k)
-        knn.fit(X_reduced, y_reduced)
-        y_pred = knn.predict(X_unseen)
-        accuracies.append(accuracy_score(y_unseen, y_pred))
+    knn.fit(X_reduced, y_reduced)
 
-        if i == 0:
-            results_df = pd.DataFrame({
-                'Movie title (10% data set)': movies_unseen.values,
-                'Recommendation by the classifier': y_pred,
-                'Known values': y_unseen.values
-            })
+    y_pred = knn.predict(X_unseen)
 
-    return accuracies, results_df
+    accuracy = accuracy_score(y_unseen, y_pred)
+
+    results_df = pd.DataFrame({
+        'Movie title (10% data set)': movies_unseen.values,
+        'Recommendation by the classifier': y_pred,
+        'Known values': y_unseen.values
+    })
+
+    return accuracy, results_df
