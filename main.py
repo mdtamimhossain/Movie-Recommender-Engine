@@ -11,7 +11,7 @@ def main():
         split_unseen(X, y, movies)
 
     best_k, runs_data = find_optimal_k(X_reduced, y_reduced)
-    print(f"-> k ótimo selecionado: {best_k}")
+    print(f"-> best k selected: {best_k}")
     plot_error_vs_k(runs_data)
 
     accuracies, results_df = run_final_test(
